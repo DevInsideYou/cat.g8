@@ -34,7 +34,15 @@ lazy val main =
   project
     .in(file("main"))
     .dependsOn(delivery % oneToOneClasspathDependencies)
-    .dependsOn(core % oneToOneClasspathDependencies)
+    .dependsOn(persistence % oneToOneClasspathDependencies)
 
 lazy val oneToOneClasspathDependencies: String =
   "compile->compile;test->test"
+
+addCommandAlias("gen", "$name;format="norm"$/g8Scaffold")
+
+onLoadMessage +=
+  s"""\nRun \${green("gen usecase")} to generate new use cases.\n"""
+
+def green(input: Any): String =
+  scala.Console.GREEN + input + scala.Console.RESET

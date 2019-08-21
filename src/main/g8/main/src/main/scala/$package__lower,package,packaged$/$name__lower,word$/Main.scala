@@ -2,9 +2,13 @@ package $package;format="lower,package"$
 package $name;format="lower,word"$
 
 object Main extends App {
-  println("─" * 50)
+  // run `sbt gen usecase` to generate
+  // one of these dependency graphs
+  // and add them to the Seq
+  Seq[DependencyGraph](
+    // user.analytics.DependencyGraph
+  ).foreach(_ apply args)
 
-  println("hello world")
-
-  println("─" * 50)
+  private[this] type DependencyGraph =
+    Array[String] => Any
 }
