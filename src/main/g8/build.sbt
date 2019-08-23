@@ -5,7 +5,7 @@ ThisBuild / scalaVersion := "$scala_version$"
 lazy val `$name;format="norm"$` =
   project
     .in(file("."))
-    .aggregate(entities, core)
+    .aggregate(entities, core, delivery, persistence, main)
     .settings(
       name := "$name$"
     )
