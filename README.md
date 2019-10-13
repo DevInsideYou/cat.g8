@@ -8,6 +8,8 @@ sbt --supershell=false new DevInsideYou/cat.g8
 
 \* The ["super shell"][supershell] feature introduced in SBT v1.3.0 does not play well with Giter8.
 
+[![Watch on YouTube](resources/thumbnail_youtube.jpg)](https://www.youtube.com/watch?v=NiLwBrgwe8M&list=PLJGDHERh23x-ubG8Kk8cA0tgmy7dfDzqp "Watch on YouTube")
+
 [g8]: http://www.foundweekends.org/giter8/
 [sbt]: https://www.scala-sbt.org/
 [scala]: https://www.scala-lang.org/
