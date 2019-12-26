@@ -3,10 +3,8 @@
 **CAT** stands for **C**lean **A**rchitecture **T**emplate. It has no relation to the [Cats][cats] library, Category theory or well... the actual cats.
 
 ```bash
-sbt --supershell=false new DevInsideYou/cat.g8
+sbt new devinsideyou/cat.g8
 ```
-
-\* The ["super shell"][supershell] feature introduced in SBT v1.3.0 does not play well with Giter8.
 
 [![Watch on YouTube](resources/thumbnail_youtube.jpg)](https://www.youtube.com/watch?v=NiLwBrgwe8M&list=PLJGDHERh23x-ubG8Kk8cA0tgmy7dfDzqp "Watch on YouTube")
 
