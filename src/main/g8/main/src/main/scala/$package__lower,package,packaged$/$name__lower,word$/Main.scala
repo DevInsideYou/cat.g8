@@ -6,7 +6,7 @@ object Main extends App {
   // one of these dependency graphs
   // and add them to the Seq
   Seq[DependencyGraph](
-    // user.analytics.DependencyGraph
+    // user.analytics.DependencyGraph.apply
   ).foreach(_ apply args)
 
   private[this] type DependencyGraph =

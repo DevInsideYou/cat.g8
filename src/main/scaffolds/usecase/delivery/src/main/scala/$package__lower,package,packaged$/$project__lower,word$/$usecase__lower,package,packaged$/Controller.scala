@@ -4,9 +4,7 @@ package $usecase;format="lower,package"$
 
 trait Controller
 
-object Controller extends (Boundary => Controller) {
-  final override def apply(boundary: Boundary): Controller =
-    new ControllerImplementation(boundary)
-
-  final class ControllerImplementation (boundary: Boundary) extends Controller
+object Controller {
+  def apply(boundary: Boundary): Controller =
+    new Controller {}
 }
