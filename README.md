@@ -6,6 +6,12 @@
 sbt new devinsideyou/cat.g8
 ```
 
+or
+
+```bash
+g8 devinsideyou/cat
+```
+
 [![Watch on YouTube](resources/thumbnail_youtube.jpg)](https://www.youtube.com/watch?v=NiLwBrgwe8M&list=PLJGDHERh23x-ubG8Kk8cA0tgmy7dfDzqp "Watch on YouTube")
 
 [g8]: http://www.foundweekends.org/giter8/
@@ -13,4 +19,3 @@ sbt new devinsideyou/cat.g8
 [scala]: https://www.scala-lang.org/
 [ca]: https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 [cats]: https://typelevel.org/cats/
-[supershell]: http://eed3si9n.com/super-shell-for-sbt
