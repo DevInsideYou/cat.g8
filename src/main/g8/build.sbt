@@ -14,33 +14,33 @@ lazy val `$name;format="norm"$` =
 
 lazy val domain =
   project
-    .in(file("domain"))
+    .in(file("01-domain"))
     .settings(commonSettings)
 
 lazy val core =
   project
-    .in(file("core"))
+    .in(file("02-core"))
     .dependsOn(domain % oneToOneClasspathDependencies)
     .settings(commonSettings)
     .settings(commonTestDependencies)
 
 lazy val delivery =
   project
-    .in(file("delivery"))
+    .in(file("03-delivery"))
     .dependsOn(core % oneToOneClasspathDependencies)
     .settings(commonSettings)
     .settings(commonTestDependencies)
 
 lazy val persistence =
   project
-    .in(file("persistence"))
+    .in(file("03-persistence"))
     .dependsOn(core % oneToOneClasspathDependencies)
     .settings(commonSettings)
     .settings(commonTestDependencies)
 
 lazy val main =
   project
-    .in(file("main"))
+    .in(file("04-main"))
     .dependsOn(delivery % oneToOneClasspathDependencies)
     .dependsOn(persistence % oneToOneClasspathDependencies)
     .settings(commonSettings)
