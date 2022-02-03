@@ -27,18 +27,18 @@ addCommandAlias(
 onLoadMessage +=
   s"""|
       |╭─────────────────────────────────╮
-      |│     List of defined ${styled("aliases")}     │
+      |│     List of defined \${styled("aliases")}     │
       |├─────────────┬───────────────────┤
-      |│ ${styled("l")} | ${styled("ll")} | ${styled("ls")} │ projects          │
-      |│ ${styled("cd")}          │ project           │
-      |│ ${styled("root")}        │ cd root           │
-      |│ ${styled("c")}           │ compile           │
-      |│ ${styled("ca")}          │ compile all       │
-      |│ ${styled("t")}           │ test              │
-      |│ ${styled("r")}           │ run               │
-      |│ ${styled("rs")}          │ reStart           │
-      |│ ${styled("s")}           │ reStop            │
-      |│ ${styled("styleCheck")}  │ fmt & fix checks  │
-      |│ ${styled("styleFix")}    │ fix then fmt      │
-      |│ ${styled("up2date")}     │ dependencyUpdates │
+      |│ \${styled("l")} | \${styled("ll")} | \${styled("ls")} │ projects          │
+      |│ \${styled("cd")}          │ project           │
+      |│ \${styled("root")}        │ cd root           │
+      |│ \${styled("c")}           │ compile           │
+      |│ \${styled("ca")}          │ compile all       │
+      |│ \${styled("t")}           │ test              │
+      |│ \${styled("r")}           │ run               │
+      |│ \${styled("rs")}          │ reStart           │
+      |│ \${styled("s")}           │ reStop            │
+      |│ \${styled("styleCheck")}  │ fmt & fix checks  │
+      |│ \${styled("styleFix")}    │ fix then fmt      │
+      |│ \${styled("up2date")}     │ dependencyUpdates │
       |╰─────────────┴───────────────────╯""".stripMargin
