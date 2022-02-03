@@ -8,7 +8,7 @@ addCommandAlias("root", "cd $name;format="norm"$")
 addCommandAlias("c", "compile")
 addCommandAlias("ca", "Test / compile")
 addCommandAlias("t", "test")
-addCommandAlias("r", "run")
+addCommandAlias("r", "main/run")
 addCommandAlias("rs", "reStart")
 addCommandAlias("s", "reStop")
 addCommandAlias(
@@ -35,7 +35,7 @@ onLoadMessage +=
       |│ \${styled("c")}           │ compile           │
       |│ \${styled("ca")}          │ compile all       │
       |│ \${styled("t")}           │ test              │
-      |│ \${styled("r")}           │ run               │
+      |│ \${styled("r")}           │ main/run          │
       |│ \${styled("rs")}          │ reStart           │
       |│ \${styled("s")}           │ reStop            │
       |│ \${styled("styleCheck")}  │ fmt & fix checks  │
