@@ -12,44 +12,10 @@ lazy val `$name;format="norm"$` =
       name := "$name$"
     )
 
-lazy val commonSettings =
-  compilerPlugins ++ commonScalacOptions ++ Seq(
-    update / evictionWarningOptions := EvictionWarningOptions.empty
-  )
-
-lazy val compilerPlugins = Seq(
-  addCompilerPlugin(com.olegpy.`better-monadic-for`),
-  addCompilerPlugin(org.augustjune.`context-applied`),
-  addCompilerPlugin(org.typelevel.`kind-projector`),
-)
-
-lazy val commonScalacOptions = Seq(
-  Compile / console / scalacOptions := {
-    (Compile / console / scalacOptions)
-      .value
-      .filterNot(_.contains("wartremover"))
-      .filterNot(Scalac.Lint.toSet)
-      .filterNot(Scalac.FatalWarnings.toSet) :+ "-Wconf:any:silent"
-  },
-  Test / console / scalacOptions :=
-    (Compile / console / scalacOptions).value,
-)
-
-lazy val commonTestDependencies = Seq(
-  libraryDependencies ++= Seq(
-    com.github.alexarchambault.`scalacheck-shapeless_1.15`,
-    org.scalacheck.scalacheck,
-    org.scalatest.scalatest,
-    org.scalatestplus.`scalacheck-1-15`,
-    org.typelevel.`discipline-scalatest`,
-  ).map(_ % Test),
-)
-
 lazy val domain =
   project
     .in(file("domain"))
     .settings(commonSettings)
-    .settings(commonTestDependencies)
 
 lazy val core =
   project
@@ -78,7 +44,39 @@ lazy val main =
     .dependsOn(delivery % oneToOneClasspathDependencies)
     .dependsOn(persistence % oneToOneClasspathDependencies)
     .settings(commonSettings)
-    .settings(commonTestDependencies)
+
+lazy val commonTestDependencies = Seq(
+  libraryDependencies ++= Seq(
+    com.github.alexarchambault.`scalacheck-shapeless_1.15`,
+    org.scalacheck.scalacheck,
+    org.scalatest.scalatest,
+    org.scalatestplus.`scalacheck-1-15`,
+    org.typelevel.`discipline-scalatest`,
+  ).map(_ % Test),
+)
+
+lazy val commonSettings =
+  compilerPlugins ++ commonScalacOptions ++ Seq(
+    update / evictionWarningOptions := EvictionWarningOptions.empty
+  )
+
+lazy val compilerPlugins = Seq(
+  addCompilerPlugin(com.olegpy.`better-monadic-for`),
+  addCompilerPlugin(org.augustjune.`context-applied`),
+  addCompilerPlugin(org.typelevel.`kind-projector`),
+)
+
+lazy val commonScalacOptions = Seq(
+  Compile / console / scalacOptions := {
+    (Compile / console / scalacOptions)
+      .value
+      .filterNot(_.contains("wartremover"))
+      .filterNot(Scalac.Lint.toSet)
+      .filterNot(Scalac.FatalWarnings.toSet) :+ "-Wconf:any:silent"
+  },
+  Test / console / scalacOptions :=
+    (Compile / console / scalacOptions).value,
+)
 
 lazy val oneToOneClasspathDependencies: String =
   "compile->compile;test->test"

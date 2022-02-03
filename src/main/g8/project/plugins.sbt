@@ -1,4 +1,4 @@
-ThisBuild / scalaVersion := "$scala_version$"
+ThisBuild / scalaVersion := "2.12.15"
 ThisBuild / useSuperShell := false
 ThisBuild / autoStartServer := false
 

@@ -11,4 +11,10 @@ object Main extends App {
 
   private[this] type DependencyGraph =
     Array[String] => Any
+
+  println("─" * 100)
+
+  println("hello world")
+
+  println("─" * 100)
 }
