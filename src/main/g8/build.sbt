@@ -1,7 +1,8 @@
 import Dependencies._
+import Util._
 
-ThisBuild / organization  := "$organization;format="lower,package"$"
-ThisBuild / scalaVersion  := "$scala_version$"
+ThisBuild / organization := "$organization;format="lower,package"$"
+ThisBuild / scalaVersion := "$scala_version$"
 ThisBuild / useSuperShell := false
 
 lazy val `$name;format="norm"$` =
@@ -20,29 +21,29 @@ lazy val domain =
 lazy val core =
   project
     .in(file("02-core"))
-    .dependsOn(domain % oneToOneClasspathDependencies)
+    .dependsOn(domain % Cctt)
     .settings(commonSettings)
     .settings(commonTestDependencies)
 
 lazy val delivery =
   project
     .in(file("03-delivery"))
-    .dependsOn(core % oneToOneClasspathDependencies)
+    .dependsOn(core % Cctt)
     .settings(commonSettings)
     .settings(commonTestDependencies)
 
 lazy val persistence =
   project
     .in(file("03-persistence"))
-    .dependsOn(core % oneToOneClasspathDependencies)
+    .dependsOn(core % Cctt)
     .settings(commonSettings)
     .settings(commonTestDependencies)
 
 lazy val main =
   project
     .in(file("04-main"))
-    .dependsOn(delivery % oneToOneClasspathDependencies)
-    .dependsOn(persistence % oneToOneClasspathDependencies)
+    .dependsOn(delivery % Cctt)
+    .dependsOn(persistence % Cctt)
     .settings(commonSettings)
 
 lazy val commonTestDependencies = Seq(
@@ -52,7 +53,7 @@ lazy val commonTestDependencies = Seq(
     org.scalatest.scalatest,
     org.scalatestplus.`scalacheck-1-15`,
     org.typelevel.`discipline-scalatest`,
-  ).map(_ % Test),
+  ).map(_ % Test)
 )
 
 lazy val commonSettings =
@@ -77,9 +78,6 @@ lazy val commonScalacOptions = Seq(
   Test / console / scalacOptions :=
     (Compile / console / scalacOptions).value,
 )
-
-lazy val oneToOneClasspathDependencies: String =
-  "compile->compile;test->test"
 
 addCommandAlias("gen", "$name;format="norm"$/g8Scaffold")
 
