@@ -1,7 +1,11 @@
+.ammonite/
 .bloop/
+.bsp/
 .dotty-ide*
 .idea/
 .metals/
+.scala/
+.vscode/
 boot/
 lib_managed/
 project/plugins/project/
