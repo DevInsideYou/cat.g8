@@ -6,8 +6,6 @@
 .metals/
 .scala/
 .vscode/
-boot/
-lib_managed/
-project/plugins/project/
-src_managed/
+*.worksheet.sc
+metals.sbt
 target/
